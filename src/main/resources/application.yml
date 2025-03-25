@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gcp:
+      project-id: project-default-id
+
+  config:
+    import: sm@
+
+mieseprem:
+  secret-from-xxx-default-explicit: ${sm@projects/${spring.cloud.gcp.project-id}/secrets/secretId}
+  secret-from-xxx-default-implicit: ${sm@secrets/secretId}
+  secret-from-xxx-secretmanager-explicit: ${sm@projects/${spring.cloud.gcp.secretmanager.project-id}/secrets/secretId}
